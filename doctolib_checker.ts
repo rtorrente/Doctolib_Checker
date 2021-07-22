@@ -57,7 +57,7 @@ async function check(link: string) {
 
 function main() {
     try{
-        const link = "https://www.doctolib.fr/availabilities.json?start_date="+dayjs().format("YYYY-MM-DD")+"&"+ QUERY_PARAMS
+        const link = "https://www.doctolib.fr/availabilities?start_date="+dayjs().format("YYYY-MM-DD")+"&"+ QUERY_PARAMS
         check(link);
     }
     catch (e) {
