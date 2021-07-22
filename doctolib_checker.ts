@@ -46,7 +46,6 @@ async function check(link: string) {
 
             const message = "RDV Dispo. Total " + data.total + " Next : " + next_availabilitie
             console.log(message);
-            pushover.setPriority(2, 3600, 60)
             await pushover.send('Nouveau créneau de RDV', message)
         }
     }
