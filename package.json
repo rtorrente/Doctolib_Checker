@@ -1,0 +1,23 @@
+{
+  "name": "doctolib_checker",
+  "version": "1.0.0",
+  "main": "doctolib_checker.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node doctolib_checker.js"
+  },
+  "keywords": [],
+  "license": "apache-2.0",
+  "description": "",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dayjs": "^1.10.4",
+    "dotenv": "^9.0.2",
+    "pushover-js": "^1.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^15.0.2",
+    "@types/staticmaps": "^1.4.2",
+    "typescript": "^4.2.4"
+  }
+}

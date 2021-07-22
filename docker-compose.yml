@@ -1,0 +1,11 @@
+version: "3.2"
+
+services:
+  doctolib-pushover:
+    build: .
+    environment:
+      PUSHOVER_USER:
+      PUSHOVER_TOKEN:
+      QUERY_PARAMS:
+      CHECK_INTERVAL_SEC:
+    restart: always
