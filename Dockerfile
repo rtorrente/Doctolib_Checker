@@ -12,6 +12,4 @@ COPY *.ts ./
 COPY tsconfig.json ./
 RUN npm run build
 
-COPY . .
-
 CMD [ "node", "doctolib_checker.js" ]
