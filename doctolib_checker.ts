@@ -34,7 +34,7 @@ async function check(link: string) {
         console.log(`fetched db ${link}`);
 
         if(data.total > 0 || data.next_slot || data.next_slot_datetime){
-            const next_availabilitie_brut:Date | undefined = data.next_slot_datetime ?? data.availabilities.find(e => e.slots.length > 0)?.slots[0];
+            const next_availabilitie_brut:Date | undefined = data.next_slot_datetime ?? data.next_slot ?? data.availabilities.find(e => e.slots.length > 0)?.slots[0];
             const next_availabilitie = dayjs(next_availabilitie_brut).format("DD/MM/YYYY HH:mm") ?? "N/A"
             // don't send twice the same info
             const id = `${data.total}-${next_availabilitie_brut}-${dayjs().format("DD/MM/YYYY")}`
