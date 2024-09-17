@@ -1,13 +1,10 @@
 import axios from 'axios';
-import {Pushover} from 'pushover-js'
-
+import dayjs from 'dayjs';
+import { notify } from './notify';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-import dayjs from 'dayjs';
-
-const pushover = new Pushover(process.env.PUSHOVER_USER!, process.env.PUSHOVER_TOKEN!)
 const CHECK_INTERVAL_SEC = Number(process.env.CHECK_INTERVAL_SEC) || 60; // check every X seconds
 const QUERY_PARAMS = process.env.QUERY_PARAMS;
 
@@ -46,7 +43,7 @@ async function check(link: string) {
 
             const message = "RDV Dispo. Total " + data.total + " Next : " + next_availabilitie
             console.log(message);
-            await pushover.send('Nouveau créneau de RDV', message)
+            await notify("Nouveau créneau de RDV", message);
         }
     }
     catch (e) {
